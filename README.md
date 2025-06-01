@@ -5,10 +5,10 @@ open command prompt (cmd) and run this
 
 pip install requests beautifulsoup4 lxml
 
-after running this save the code which i mentioned above
+after running this save the code(pornkeendownload.py) which i mentioned above
 
 and you can get the output of all videos
-now you can either download them or you can paste them in the html which i provided to view
+now you can either download them or you can paste them in the html(pornkeen video viewer.html)  which i provided to view
 
 NOTE : 
 the cdns will change definetly
