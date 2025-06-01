@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Pornkeen video viewer </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .pagination {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .pagination button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .pagination span {
+      font-size: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .video-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .video-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Videos Side by Side with Pagination</h2>
+
+  <div class="video-container" id="videoContainer"></div>
+
+  <div class="pagination">
+    <button onclick="prevPage()" id="prevBtn">Previous</button>
+    <span id="pageIndicator">Page 1</span>
+    <button onclick="nextPage()" id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const videoUrls = [
+// enter the list of links which you have obtained from pornkeendownload.py
+];
+
+
+
+    const videosPerPage = 20;
+    let currentPage = 1;
+    const totalPages = Math.ceil(videoUrls.length / videosPerPage);
+
+    function renderVideos() {
+      const container = document.getElementById("videoContainer");
+      container.innerHTML = "";
+
+      const start = (currentPage - 1) * videosPerPage;
+      const end = start + videosPerPage;
+
+      videoUrls.slice(start, end).forEach(url => {
+        const video = document.createElement("video");
+        video.controls = true;
+        video.src = url;
+        container.appendChild(video);
+      });
+
+      document.getElementById("pageIndicator").textContent = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById("prevBtn").disabled = currentPage === 1;
+      document.getElementById("nextBtn").disabled = currentPage === totalPages;
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderVideos();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderVideos();
+      }
+    }
+
+    renderVideos();
+  </script>
+
+</body>
+</html>
