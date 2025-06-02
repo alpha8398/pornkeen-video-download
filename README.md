@@ -16,8 +16,12 @@ new videos may come
 so here i am mentioning the cdns
 https://cdn.pornkeen.net/2022/12/
 
+
 i have mentioned in the link untill 
 https://cdn.pornkeen.net/2022/12/22/
+https://cdn.bollyxxx.net/
+this are two cdns which i found unitll now
+
 
 if you want you can add more from above cdns
 
